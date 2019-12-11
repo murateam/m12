@@ -132,9 +132,9 @@ LOGIN_REDIRECT_URL = "tasks:list"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
-EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_HOST = os.environ.get("EMAIL_HOST", 'smtp.example.com')
 EMAIL_HOST_USER = 'your_account@gmail.com'
 EMAIL_HOST_PASSWORD = "_password_"
-EMAIL_PORT = int(os.environ.get("EMAIL_PORT"))
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "25"))
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
