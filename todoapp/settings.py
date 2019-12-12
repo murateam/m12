@@ -122,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -138,3 +139,5 @@ EMAIL_HOST_PASSWORD = "_password_"
 EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "25"))
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+django_heroku.settings(locals())
